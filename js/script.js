@@ -1,21 +1,22 @@
 window.onload = function() {
 
-	var newTime = document.getElementById("clock");
-		hexColor = document.getElementById("container")
-		bar = document.getElementById("progressBar");
+	var newTime = document.getElementById("clock"),
+		hexColor = document.getElementById("container"),
+		bar = document.getElementById("progressBar"),
+		width = new Date().getSeconds() * 5;
 
 	var adjustTime = function(n) {
-		if (n < 10) {n = "0" + n}
-			return n
+		if (n < 10) {n = "0" + n};
+			return n;
 	}
 
 	var makeClock = function() {
-		time = new Date();
-		hours = adjustTime(time.getHours());
-		minutes = adjustTime(time.getMinutes());
-		seconds = adjustTime(time.getSeconds());
-		clock = "<p>" + hours + ":" + minutes + ":" + seconds + "</p>"
-		newTime.innerHTML = clock
+		var time = new Date(),
+			hours = adjustTime(time.getHours()),
+			minutes = adjustTime(time.getMinutes()),
+			seconds = adjustTime(time.getSeconds()),
+			clock = "<p>" + hours + ":" + minutes + ":" + seconds + "</p>"
+		newTime.innerHTML = clock;
 	}
 
 	var changeHex = function() {
@@ -23,15 +24,20 @@ window.onload = function() {
 	}
 
 	var changeBar = function() {
+		if (width <= 300) width += 5;
+		if (width > 300) width = 0;
+
+		bar.style.width = width + 'px';
+		return bar.style.width;
 	}
 
-	newTime.onmouseover = function() {
-		newTime.innerHTML = "<p>" + "E0:D1:C2" + "</p>";
-	}
-	newTime.onmouseout = function() {
-		newTime.innerHTML = "<p>" + hours + ":" + minutes + ":" + seconds + "</p>";
+	var updateView = function() {
+		makeClock();
+		changeBar();
 	}
 
-	setInterval(makeClock, 1000)
+	updateView()
+
+	setInterval(updateView, 1000)
 
 }

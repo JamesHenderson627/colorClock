@@ -9,7 +9,7 @@
 	position: relative;
 }
 
-#clock {
+#clock, #hex {
 	/*border: 2px solid blue;*/
 	width: 300px;
 	height: 100px;
@@ -19,8 +19,23 @@
 	position: absolute;
 }
 
+#clock {
+	z-index: 1;
+}
+
 #clock:hover {
 	cursor: pointer;
+	opacity: 0;
+	transition: .5s;
+}
+
+#clock:hover + #hex {
+	opacity: 1;
+	transition: .5s;
+}
+
+#hex {
+	opacity: 0;
 }
 
 p {
@@ -31,7 +46,6 @@ p {
 
 #progressBar {
 	border: 2px solid white;
-	width: 300px;
 	top: 55%;
 	left: 50%;
 	transform: translate(-50%, -50%);
