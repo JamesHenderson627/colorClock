@@ -6,6 +6,7 @@ window.onload = function() {
 		bar = document.getElementById("progressBar"),
 		width = new Date().getSeconds() * 5;
 
+	// For Time
 	var adjustTime = function(n) {
 		if (n < 10) {n = "0" + n};
 			return n;
@@ -24,12 +25,11 @@ window.onload = function() {
 		var date = new Date(),
 			hexSecond = toStr(date.getSeconds() * 255/60).toUpperCase(),
 			hexMinute = toStr(date.getMinutes() * 255/60).toUpperCase(),
-			hexHour = toStr((date.getHours() * 255/24)-3).toUpperCase()
+			hexHour = toStr((date.getHours() * 255/24)-3).toUpperCase(),
+			colors = '#' + hexHour + hexMinute + hexSecond;
 
-		hexTime.innerHTML = "<p>" + hexHour + ":" + hexMinute + ":" + hexSecond + "</p>";
 
-		var colors = '#' + hexHour + hexMinute + hexSecond;
-		
+		hexTime.innerHTML = "<p>" + hexHour + ":" + hexMinute + ":" + hexSecond + "</p>";		
 	    hexColor.style.background = "-webkit-radial-gradient(center, circle cover, #FFFFE6," + colors + ")";
 	}
 
