@@ -58,6 +58,8 @@ window.onload = function() {
 		hexToTime();
 	}
 
+	updateView();
+
 	setInterval(updateView, 1000)
 
 }
