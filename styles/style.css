@@ -19,6 +19,12 @@
 
 #clock {
 	z-index: 1;
+	transition: .5s;
+}
+
+#hex {
+	opacity: 0;
+	transition: .5s;
 }
 
 #clock:hover {
@@ -30,10 +36,6 @@
 #clock:hover + #hex {
 	opacity: 1;
 	transition: .5s;
-}
-
-#hex {
-	opacity: 0;
 }
 
 p {
