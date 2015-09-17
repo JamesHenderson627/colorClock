@@ -33,6 +33,7 @@ window.onload = function() {
 	    hexColor.style.background = "-webkit-radial-gradient(center, circle cover, #FFFFE6," + colors + ")";
 	}
 
+	// For Hex Numbers
 	function add0(num) {
 	    var dig = num + "";
 	    if (dig.length < 2) dig = "0" + dig;
