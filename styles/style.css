@@ -3,7 +3,6 @@
 }
 
 #container {
-	background: -webkit-radial-gradient(center, circle cover, #E0D1C2, #8A5C2E);
 	height: 800px;
 	background-repeat: no-repeat;
 	position: relative;
@@ -42,10 +41,11 @@ p {
 	text-align: center;
 	margin-top: 7%;
 	font-size: 50px;
+	font-family: 'Poiret One', cursive;
 }
 
 #progressBar {
-	border: 2px solid white;
+	border: 2px solid black;
 	top: 55%;
 	left: 50%;
 	transform: translate(-50%, -50%);
